@@ -48,7 +48,7 @@ class DestinosController extends Controller
         $destino = Destino::create($request->all());
 
         return redirect()->route('destinos.index')
-            ->with('success', 'Destino created successfully.');
+            ->with('success', 'Destino creado.');
     }
 
     /**
@@ -91,7 +91,7 @@ class DestinosController extends Controller
         $destino->update($request->all());
 
         return redirect()->route('destinos.index')
-            ->with('success', 'Destino updated successfully');
+            ->with('success', 'Destino actualizado.');
     }
 
     /**
@@ -104,6 +104,6 @@ class DestinosController extends Controller
         $destino = Destino::find($id)->delete();
 
         return redirect()->route('destinos.index')
-            ->with('success', 'Destino deleted successfully');
+            ->with('success', 'Destino borrado.');
     }
 }

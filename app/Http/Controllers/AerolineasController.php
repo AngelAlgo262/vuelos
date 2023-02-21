@@ -48,7 +48,7 @@ class AerolineasController extends Controller
         $aerolinea = Aerolinea::create($request->all());
 
         return redirect()->route('aerolineas.index')
-            ->with('success', 'Aerolinea created successfully.');
+            ->with('success', 'Aerolinea creada.');
     }
 
     /**
@@ -91,7 +91,7 @@ class AerolineasController extends Controller
         $aerolinea->update($request->all());
 
         return redirect()->route('aerolineas.index')
-            ->with('success', 'Aerolinea updated successfully');
+            ->with('success', 'Aerolinea actualizada.');
     }
 
     /**
@@ -104,6 +104,6 @@ class AerolineasController extends Controller
         $aerolinea = Aerolinea::find($id)->delete();
 
         return redirect()->route('aerolineas.index')
-            ->with('success', 'Aerolinea deleted successfully');
+            ->with('success', 'Aerolinea borrada.');
     }
 }

@@ -59,7 +59,7 @@ class VueloController extends Controller
         //$vuelo = Vuelo::create($request->all());
         
         return redirect()->route('vuelos.index')
-            ->with('success', 'Vuelo created successfully.'); 
+            ->with('success', 'Vuelo creado.'); 
     }
 
     /**
@@ -104,7 +104,7 @@ class VueloController extends Controller
         $vuelo->update($request->all());
 
         return redirect()->route('vuelos.index')
-            ->with('success', 'Vuelo updated successfully');
+            ->with('success', 'Vuelo actualizado.');
     }
 
     /**
@@ -117,6 +117,6 @@ class VueloController extends Controller
         $vuelo = Vuelo::find($id)->delete();
 
         return redirect()->route('vuelos.index')
-            ->with('success', 'Vuelo deleted successfully');
+            ->with('success', 'Vuelo borrado.');
     }
 }
