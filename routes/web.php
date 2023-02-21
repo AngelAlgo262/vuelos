@@ -27,3 +27,7 @@ Route::resource('destinos', DestinosController::class)->middleware('auth');//tod
 Auth::routes(['register' => false, 'reset' => false]); //ocultar enlaces de autenticación, registro y recuperar contraseña
 
 Route::get('/home', [VueloController::class, 'index'])->name('home');
+
+/* Configuración inicial */
+Route::get('/configs', [App\Http\Controllers\ConfigController::class, 'index'])->name('configs');
+Route::post('/configs/create',[App\Http\Controllers\ConfigController::class, 'create'])->name('config.create');
