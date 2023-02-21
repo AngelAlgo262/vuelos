@@ -26,4 +26,4 @@ Route::resource('aerolineas', AerolineasController::class)->middleware('auth'); 
 Route::resource('destinos', DestinosController::class)->middleware('auth');//todos los métodos del controlador de destinos
 Auth::routes(['register' => false, 'reset' => false]); //ocultar enlaces de autenticación, registro y recuperar contraseña
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [VueloController::class, 'index'])->name('home');
