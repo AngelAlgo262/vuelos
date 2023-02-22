@@ -3,18 +3,13 @@
 
         <div class="form-group">
             {{ Form::label('aerolinea') }}
-            {{-- <select class="form-control" name="aerolinea_id" required>
+            <select class="form-control" name="aerolinea_id" required>
                 <option disabled selected>Seleccione una opcion</option>
-                <option value="{{ $aerolineas }}">{{ $aerolineas }}</option>
+                @foreach ($aerolineas as $keyaerolinea => $aerolinea )
+                <option value="{{ $keyaerolinea }}">{{ $aerolinea }}</option>
+                @endforeach
                 
-            </select> --}}
-            <div class="form-control">
-            {{ Form::select('aerolinea_id', $aerolineas, [
-                'class' => 'form-control' . ($errors->has('aerolinea_id') ? ' is-invalid' : ''),
-                'placeholder' => 'Aerolinea Id',
-            ]) }}
-
-            {!! $errors->first('aerolinea_id', '<div class="invalid-feedback">:message</div>') !!}
+            </select>
         </div>
 
             {{ Form::label('salida') }}
@@ -25,39 +20,40 @@
             {!! $errors->first('salida', '<div class="invalid-feedback">:message</div>') !!}
 
             {{ Form::label('destino') }}
-            {{-- <select class="form-control" name="destino_id" required>
+            <select class="form-control" name="destino_id" required>
                 <option value="" disabled selected>Selecciones una opcion</option>
-                <option>{{ $destinos[1] }}</option>
-            </select> --}}
-            <div class="form-control">
-            {{ Form::select('destino_id', $destinos, [
-                'class' => 'form-control' . ($errors->has('destino_id') ? ' is-invalid' : ''),
-                'placeholder' => 'Destino Id',
-            ]) }}
-            {!! $errors->first('destino_id', '<div class="invalid-feedback">:message</div>') !!}
+                @foreach ($destinos as $keydestino => $destino )
+                <option value="{{ $keydestino }}"> {{ $destino }}</option>
+                @endforeach
+            </select> 
+ 
         </div>
             {{ Form::label('avion') }}
             {{ Form::text('avion', $vuelo->avion, ['class' => 'form-control' . ($errors->has('avion') ? ' is-invalid' : ''), 'placeholder' => 'Avion']) }}
             {!! $errors->first('avion', '<div class="invalid-feedback">:message</div>') !!}
 
             {{ Form::label('embarque') }}
-            <select class="form-control" name="embarque" required>
-                <option value="" disabled selected>Selecciones una opcion</option>
-                <option>E1</option>
-                <option>E2</option>
-                <option>E3</option>
-                <option>E5</option>
+            <div class="form-control">
+            <select name="embarque" >
+                <option></option>
+                <option value="E1" {{ isset($vuelo->embarque)&&$vuelo->embarque=='E1'? 'selected':''}}>E1</option>
+                <option value="E2" {{ isset($vuelo->embarque)&&$vuelo->embarque=='E2'? 'selected':''}}>E2</option>
+                <option value="E3" {{ isset($vuelo->embarque)&&$vuelo->embarque=='E3'? 'selected':''}}>E3</option>
+                <option value="E5" {{ isset($vuelo->embarque)&&$vuelo->embarque=='E5'? 'selected':''}}>E5</option>
             </select>
+        </div>
             {{-- {{ Form::select('embarque', $vuelo->embarque, ['class' => 'form-control' . ($errors->has('embarque') ? ' is-invalid' : ''), 'placeholder' => 'Embarque']) }} --}}
             {!! $errors->first('embarque', '<div class="invalid-feedback">:message</div>') !!}
 
             {{ Form::label('estatus') }}
-            <select class="form-control" name="estatus" required>
-                <option value="" disabled selected>Selecciones una opcion</option>
-                <option>A tiempo</option>
-                <option>Cancelado</option>
-                <option>Retrasado</option>
-            </select>
+            <div class="form-control">
+                <select name="estatus">
+                    <option></option>
+                    <option value="A tiempo" {{ isset($vuelo->estatus)&&$vuelo->estatus=='A tiempo'? 'selected':''}}>A tiempo</option>
+                    <option value="Cancelado" {{ isset($vuelo->estatus)&&$vuelo->estatus=='Cancelado'? 'selected':''}}>Cancelado</option>
+                    <option value="Retrasado" {{ isset($vuelo->estatus)&&$vuelo->estatus=='Retrasado'? 'selected':''}}>Retrasado</option>
+                </select>
+            </div>
             {{--  {{ Form::text('estatus', $vuelo->estatus, ['class' => 'form-control' . ($errors->has('estatus') ? ' is-invalid' : ''), 'placeholder' => 'Estatus']) }} --}}
             {!! $errors->first('estatus', '<div class="invalid-feedback">:message</div>') !!}
         </div>
