@@ -6,7 +6,7 @@
             <select class="form-control" name="aerolinea_id" required>
                 <option disabled selected>Seleccione una opcion</option>
                 @foreach ($aerolineas as $keyaerolinea => $aerolinea )
-                <option value="{{ $keyaerolinea }}">{{ $aerolinea }}</option>
+                <option value="{{ $keyaerolinea }}" {{ isset($vuelo->aerolinea_id)&&$vuelo->aerolinea_id==$keyaerolinea ? 'selected':''}}>{{ $aerolinea }}</option>
                 @endforeach
                 
             </select>
@@ -23,7 +23,8 @@
             <select class="form-control" name="destino_id" required>
                 <option value="" disabled selected>Selecciones una opcion</option>
                 @foreach ($destinos as $keydestino => $destino )
-                <option value="{{ $keydestino }}"> {{ $destino }}</option>
+                <option value="{{ $keydestino }}" {{ isset($vuelo->aerolinea_id)&&$vuelo->aerolinea_id==$keydestino ? 'selected':''}}>  {{ $destino }}
+                </option>
                 @endforeach
             </select> 
  

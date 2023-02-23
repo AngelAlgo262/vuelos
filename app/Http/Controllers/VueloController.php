@@ -37,10 +37,10 @@ class VueloController extends Controller
         $vuelo = new Vuelo();
         $aerolineas = Aerolinea::pluck('nombre','id');
         $destinos = Destino::pluck('nombre_cuidad_destino', 'id');
-        //$vuelo = $aerolineas . $destinos;
+        $datosVuelos = $vuelo . $aerolineas . $destinos;
         
         
-        return view('vuelo.create', compact('vuelo', 'aerolineas','destinos'));
+        return view('vuelo.create', compact('vuelo', 'aerolineas','destinos', 'datosVuelos'));
     
     }
 
@@ -83,9 +83,12 @@ class VueloController extends Controller
      */
     public function edit($id)
     {
+
         $vuelo = Vuelo::find($id);
+        //if(empty($vuelo) ) {return redirect()->route('vuelos.index')->with('alert-warning', 'Vuelo no encontrado');}
         $aerolineas = Aerolinea::pluck('nombre','id');
         $destinos = Destino::pluck('nombre_cuidad_destino', 'id');
+
 
         return view('vuelo.edit', compact('vuelo', 'aerolineas', 'destinos'));
     }
