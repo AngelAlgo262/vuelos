@@ -13,6 +13,7 @@
         </div>
 
     </div>
+    <br>
     <div class="box-footer mt20">
         <button type="submit" class="btn btn-primary">Guardar</button>
     </div>
