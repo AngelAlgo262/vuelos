@@ -61,7 +61,9 @@
                                             <td>
                                                 <form action="{{ route('vuelos.destroy',$vuelo->id) }}" method="POST">
                                                     
-                                                    <a class="btn btn-sm btn-warning" href="{{ route('vuelos.edit',$vuelo->id) }}"><i class="fa fa-fw fa-edit"></i> Editar</a>
+                                                    <a class="btn btn-sm btn-warning" href="{{ route('vuelos.edit',$vuelo->id) }}">
+                                                        <img src="{{ asset('icons/magnifying-glass.svg') }}" alt="Editar" class="svg-icon"> Editar
+                                                    </a>
                                                     <a class="btn btn-sm btn-info text-white" href="{{ route('vuelos.show', $vuelo->id) }}"> Detalle </a>
                                                     @csrf
                                                     @method('DELETE')
