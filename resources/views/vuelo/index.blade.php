@@ -13,7 +13,7 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ ('Vuelo') }}
+                                <h5>Vuelos</h5>
                             </span>
 
                              <div class="float-right">
@@ -61,11 +61,11 @@
                                             <td>
                                                 <form action="{{ route('vuelos.destroy',$vuelo->id) }}" method="POST">
                                                     
-                                                    <a class="btn btn-sm btn-success" href="{{ route('vuelos.edit',$vuelo->id) }}"><i class="fa fa-fw fa-edit"></i> Editar</a>
+                                                    <a class="btn btn-sm btn-warning" href="{{ route('vuelos.edit',$vuelo->id) }}"><i class="fa fa-fw fa-edit"></i> Editar</a>
+                                                    <a class="btn btn-sm btn-info text-white" href="{{ route('vuelos.show', $vuelo->id) }}"> Detalle </a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Borrar</button>
-                                                    <a class="btn btn-sm btn-info text-white" href="{{ route('vuelos.show', $vuelo->id) }}"> Detalle </a>
                                                 </form>
                                             </td>
                                         </tr>
