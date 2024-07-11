@@ -60,7 +60,7 @@
         </div>
 
 </div>
-<div class="box-footer mt20">
-    <button type="submit" class="btn btn-primary">Guardar</button>
+<div class="box-footer">
+    <button type="submit" class="btn btn-sm btn-primary" style="margin-left: 16px;">Guardar</button>
 </div>
 </div>
