@@ -14,7 +14,7 @@
                             <span class="card-title">Mostrar Vuelo</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('vuelos.index') }}"> Regresar</a>
+                            <a class="btn btn-sm btn-primary" href="{{ route('vuelos.index') }}"> Regresar</a>
                         </div>
                     </div>
 
