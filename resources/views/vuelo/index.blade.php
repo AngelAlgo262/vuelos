@@ -65,6 +65,7 @@
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Borrar</button>
+                                                    <a class="btn btn-sm btn-info text-white" href="{{ route('vuelos.show', $vuelo->id) }}"> Detalle </a>
                                                 </form>
                                             </td>
                                         </tr>
